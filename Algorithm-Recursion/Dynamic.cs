@@ -576,20 +576,20 @@ Design an algorithm to find the maximum profit. You may complete at most two tra
 
             if (si <= 0 || ti <= 0 || si < ti) return 0;
 
-            int[,] dptable = new int[si+1, ti+1];
+            int[,] dptable = new int[si + 1, ti + 1];
             //if (S[0] == T[0])
             //    dptable[0, 0] = 1;
             //else
             //    dptable[0, 0] = 0;
 
-            for (int i = 0; i <=si; i++)
+            for (int i = 0; i <= si; i++)
             {
                 dptable[0, i] = 1;
             }
 
             for (int i = 0; i < ti; i++)
             {
-                dptable[i, 0] = 0; 
+                dptable[i, 0] = 0;
             }
 
             for (int j = 0; j <= ti; ++j)
@@ -602,7 +602,7 @@ Design an algorithm to find the maximum profit. You may complete at most two tra
                         //if (j == 0)
                         //    dptable[i, j] += 1;
                         //else
-                            dptable[i, j] += dptable[i - 1, j - 1];
+                        dptable[i, j] += dptable[i - 1, j - 1];
                     }
                 }
             }
@@ -611,35 +611,107 @@ Design an algorithm to find the maximum profit. You may complete at most two tra
         }
 
 
-      
+
         #endregion
 
         #region  Decoding Ways
-        //public void NumDecodings(string s)
-        //{
-        //    int[] result = new int[s.Length+1];
-
-        //    result[0] = ( VaildChar(s[0]) == true ? 1:0); 
-
-        //    result[1] = ( VaildChar(s[1]) == true ? 2:1); 
-
-        //    for (int i = 2; i < length; i++)
-        //    {
-
-        //    }
-
-        //}
-
-        public bool VaildChar(char c)
+        /*
+         
+           A message containing letters from A-Z is being encoded to numbers using the following mapping:
+            'A' -> 1
+            'B' -> 2
+            ...
+            'Z' -> 26
+            Given an encoded message containing digits, determine the total number of ways to decode it.
+            For example,
+            Given encoded message "12", it could be decoded as "AB" (1 2) or "L" (12).
+            The number of ways decoding "12" is 2.
+         
+         */
+        /*not correct  */
+        public int NumDecodings(string s)
         {
+            int result = 0;
+            for (int i = 1; i < s.Length; i = i + 2)
+            {
+                if (valid(s[i].ToString()))
+                {
+                    result = result + 1;
+                }
+                if (i < s.Length - 1 && s[i] != '0')
+                {
+                    if (valid(s.Substring(i-1, 2)))
+                    {
+
+                        result = result + 1;
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        private bool valid(string s)
+        {
+            if (s.Length == 0) { return false; }
+            if (s[0] == '0') { return false; }
+            if (s.Length == 2)
+            {
+                if (s[0] > '2' || (s[0] == '2' && s[1] > '6')) { return false; }
+            }
             return true;
         }
 
-        public bool VaildChar(char c1, char c2)
+        public int NumDecodings2(string s)
         {
-            return true;
+
+            if (s== null || s.Length == 0)
+            {
+                return 0;
+            }
+
+            int[] result = new int[s.Length+1];
+
+            if (s[0] != '0')
+            {
+                result[0] = 1;
+            }
+
+            if (s.Length == 1)
+            {
+                return result[0];
+            }
+
+            if (valid(s.Substring(0, 2)))
+            {
+                result[1]++;
+            } //set res[1]
+
+            if (s[0] != '0' && s[1] != '0')
+            {
+                result[1]++;
+            } //set res[1]
+
+            //DP
+            for (int i = 2; i <= s.Length; i++)
+            {
+                if (s[i-1] != '0') { result[i] += result[i - 1]; }
+                if (i < s.Length)
+                {
+
+
+                    if (valid(s.Substring(i - 1, 2)))
+                    {
+                        result[i] += result[i - 2];
+                    }
+                }
+            }
+
+            return result[s.Length];
+
         }
-        #endregion
+
+        #endregion 
     }
 
 }

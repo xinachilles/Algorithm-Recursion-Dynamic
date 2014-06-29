@@ -192,6 +192,21 @@ namespace TestProject
             
         }
 
-     
+
+
+        /// <summary>
+        ///A test for NumDecodings
+        ///</summary>
+        [TestMethod()]
+        public void NumDecodingsTest()
+        {
+            Dynamic target = new Dynamic(); // TODO: Initialize to an appropriate value
+            string s = "12345678"; // TODO: Initialize to an appropriate value
+            int expected = 0; // TODO: Initialize to an appropriate value
+            int actual;
+            int actual1;
+            actual = target.NumDecodings(s);
+            actual1 = target.NumDecodings2(s);
+                   }
     }
 }

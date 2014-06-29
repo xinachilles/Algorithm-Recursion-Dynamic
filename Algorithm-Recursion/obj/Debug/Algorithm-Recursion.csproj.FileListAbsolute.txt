@@ -13,3 +13,8 @@ C:\Xin\Algorithm-Recursion-master\Algorithm-Recursion\obj\Debug\Algorithm-Recurs
 C:\Xin\Algorithm-Recursion-master\Algorithm-Recursion\obj\Debug\Algorithm-Recursion.pdb
 C:\Xin\Algorithm-Recursion-master\Algorithm-Recursion\bin\Debug\Algorithm-Recursion.dll
 C:\Xin\Algorithm-Recursion-master\Algorithm-Recursion\bin\Debug\Algorithm-Recursion.pdb
+C:\Xin\Algorithm-Recursion-Dynamic-master\Algorithm-Recursion\bin\Debug\Algorithm-Recursion.dll
+C:\Xin\Algorithm-Recursion-Dynamic-master\Algorithm-Recursion\bin\Debug\Algorithm-Recursion.pdb
+C:\Xin\Algorithm-Recursion-Dynamic-master\Algorithm-Recursion\obj\Debug\ResolveAssemblyReference.cache
+C:\Xin\Algorithm-Recursion-Dynamic-master\Algorithm-Recursion\obj\Debug\Algorithm-Recursion.dll
+C:\Xin\Algorithm-Recursion-Dynamic-master\Algorithm-Recursion\obj\Debug\Algorithm-Recursion.pdb

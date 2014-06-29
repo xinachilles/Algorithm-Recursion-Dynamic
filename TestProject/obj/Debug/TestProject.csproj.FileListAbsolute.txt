@@ -25,3 +25,12 @@ C:\Xin\Algorithm-Recursion-master\TestProject\bin\Debug\Algorithm-Recursion_Acce
 C:\Xin\Algorithm-Recursion-master\TestProject\obj\Debug\ResolveAssemblyReference.cache
 C:\Xin\Algorithm-Recursion-master\TestProject\obj\Debug\TestProject.dll
 C:\Xin\Algorithm-Recursion-master\TestProject\obj\Debug\TestProject.pdb
+C:\Xin\Algorithm-Recursion-Dynamic-master\TestProject\bin\Debug\TestProject.dll
+C:\Xin\Algorithm-Recursion-Dynamic-master\TestProject\bin\Debug\TestProject.pdb
+C:\Xin\Algorithm-Recursion-Dynamic-master\TestProject\bin\Debug\Algorithm-Recursion.dll
+C:\Xin\Algorithm-Recursion-Dynamic-master\TestProject\bin\Debug\Algorithm-Recursion.pdb
+C:\Xin\Algorithm-Recursion-Dynamic-master\TestProject\bin\Debug\Algorithm-Recursion_Accessor.dll
+C:\Xin\Algorithm-Recursion-Dynamic-master\TestProject\bin\Debug\Algorithm-Recursion_Accessor.pdb
+C:\Xin\Algorithm-Recursion-Dynamic-master\TestProject\obj\Debug\ResolveAssemblyReference.cache
+C:\Xin\Algorithm-Recursion-Dynamic-master\TestProject\obj\Debug\TestProject.dll
+C:\Xin\Algorithm-Recursion-Dynamic-master\TestProject\obj\Debug\TestProject.pdb
