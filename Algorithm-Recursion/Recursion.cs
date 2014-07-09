@@ -1584,7 +1584,7 @@ namespace ClassLibrary
             {
                 for (int j = 0; j < board[0].Length; j++)
                 {
-                    if (FindAdjeacent(i + 2, i - 2, j + 2, j - 2, i, j, str, 0, board, mark) == true)
+                    if (FindAdjeacent(i, j, str, 0, board, mark) == true)
                     {
 
                         return true;
@@ -1595,17 +1595,14 @@ namespace ClassLibrary
             return false;
         }
 
-        private bool FindAdjeacent(int row_max, int row_min, int col_max, int col_min, int row, int col, string s, int index, List<string> board, int[,] mark)
+        private bool FindAdjeacent(int row, int col, string s, int index, List<string> board, int[,] mark)
         {
             int max_row = board.Count;
             int max_col = board[0].Length; ;
 
 
-            if ((row >= row_max || row >= max_row) ||
-                 (row < 0 || row < row_min) ||
-                 (col < 0 || col < col_min) ||
-                 (col >= col_max || col >= max_col)
-                )
+            if (row >= max_row || row < 0  || col < 0 || col >= max_col)
+                
             {
                 return false;
             }
@@ -1624,10 +1621,10 @@ namespace ClassLibrary
                     {
                         mark[row, col] = 1;
 
-                        return (FindAdjeacent(row + 2, row - 2, col + 2, col - 2, row - 1, col, s, index + 1, board, mark) ||
-                               FindAdjeacent(row + 2, row - 2, col + 2, col - 2, row + 1, col, s, index + 1, board, mark) ||
-                               FindAdjeacent(row + 2, row - 2, col + 2, col - 2, row, col + 1, s, index + 1, board, mark) ||
-                               FindAdjeacent(row + 2, row - 2, col + 2, col - 2, row, col - 1, s, index + 1, board, mark));
+                        return (FindAdjeacent(row - 1, col, s, index + 1, board, mark) ||
+                               FindAdjeacent(row + 1, col, s, index + 1, board, mark) ||
+                               FindAdjeacent(row, col + 1, s, index + 1, board, mark) ||
+                               FindAdjeacent(row, col - 1, s, index + 1, board, mark));
 
                     }
 
@@ -1638,7 +1635,7 @@ namespace ClassLibrary
         }
         #endregion
 
-        #region Leet Combinations, Solution
+        #region LeetCode Combinations, Solution
         /*
          Given two integers n and k, return all possible combinations of k numbers out of 1 ... n.
          For example,
@@ -1665,8 +1662,8 @@ namespace ClassLibrary
         {
             if (solution.Count == k)
             {
-                List<int> temp_solution = new List<int>(solution);
-                result.Add(temp_solution);
+                
+                result.Add(new List<int>(solution));
                 return;
             }
             for (int i = level; i <= n; i++)
@@ -1684,7 +1681,7 @@ namespace ClassLibrary
             List<Stack<int>> result = new List<Stack<int>>();
             Stack<int> temp = new Stack<int>();
 
-
+            // start with 1 
             for (int i = 1; i <= n; i++)
             {
 

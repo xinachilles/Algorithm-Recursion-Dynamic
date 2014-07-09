@@ -532,15 +532,14 @@ namespace TestProject
         {
             Recursion target = new Recursion(); // TODO: Initialize to an appropriate value
             List<string> board = new List<string>();
-            board.Add("ABCE");
+            board.Add("ABCE"); //
             board.Add("SFCS");
             board.Add("ADEE");
 
-            string str = "ABCE"; // TODO: Initialize to an appropriate value
-          
-          
-            bool actual;
-            actual = target.Search(board, str);
+            string str = "SEE"; // TODO: Initialize to an appropriate value
+            bool actual1 = target.Search(board, str);
+
+            Assert.AreEqual(actual1, true);
         
         }
 
