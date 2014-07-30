@@ -256,5 +256,21 @@ namespace TestProject
             actual = target.WordBreakII(s, dic);
             
         }
+
+        /// <summary>
+        ///A test for WordBreakDP
+        ///</summary>
+        [TestMethod()]
+        public void WordBreakDPTest()
+        {
+            Dynamic target = new Dynamic(); // TODO: Initialize to an appropriate value
+            string[] a = { "cat", "cats", "and", "sand", "dog" };
+            string s = "catsanddog"; // TODO: Initialize to an appropriate value
+            List<string> dict = new List<string>(a);  // TODO: Initialize to an appropriate value
+            List<string> expected = null; // TODO: Initialize to an appropriate value
+            List<string> actual;
+            actual = target.WordBreakDP(s, dict);
+         
+        }
     }
 }

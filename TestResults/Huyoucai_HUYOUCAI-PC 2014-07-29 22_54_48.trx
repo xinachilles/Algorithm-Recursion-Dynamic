@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="d0ddf0d1-f332-42b4-a11f-2557020762e2" name="Huyoucai@HUYOUCAI-PC 2014-07-29 22:54:48" runUser="Huyoucai-PC\Huyoucai" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="e4167082-9d56-471a-b488-96ac36bacfa7">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Huyoucai_HUYOUCAI-PC 2014-07-29 22_54_48">
+      <DeploymentItem filename="G:\GitHub\Algorithm-Recursion-Dynamic\Algorithm-Recursion\bin\Debug\Algorithm-Recursion.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2014-07-29T22:54:48.9974596-06:00" queuing="2014-07-29T22:54:50.5905508-06:00" start="2014-07-29T22:54:50.6975569-06:00" finish="2014-07-29T22:55:28.9297436-06:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="HUYOUCAI-PC" outcome="Error" timestamp="2014-07-29T22:55:28.9287436-06:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="WordBreakDPTest" storage="g:\github\algorithm-recursion-dynamic\testproject\bin\debug\testproject.dll" id="803a80ed-c142-7504-3e6f-864a5e51a88a">
+      <Execution id="a79f715f-5816-48a2-b081-d22a2051763f" />
+      <TestMethod codeBase="G:/GitHub/Algorithm-Recursion-Dynamic/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.DynamicTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="WordBreakDPTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="803a80ed-c142-7504-3e6f-864a5e51a88a" executionId="a79f715f-5816-48a2-b081-d22a2051763f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="a79f715f-5816-48a2-b081-d22a2051763f" testId="803a80ed-c142-7504-3e6f-864a5e51a88a" testName="WordBreakDPTest" computerName="HUYOUCAI-PC" duration="00:00:38.1101797" startTime="2014-07-29T22:54:50.8195639-06:00" endTime="2014-07-29T22:55:28.9297436-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a79f715f-5816-48a2-b081-d22a2051763f">
+    </UnitTestResult>
+  </Results>
+</TestRun>

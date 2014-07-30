@@ -783,19 +783,7 @@ Design an algorithm to find the maximum profit. You may complete at most two tra
         }
         #endregion
 
-        #region Leet Word Break II error one
-        /*
-         Given a string s and a dictionary of words dict, add spaces in s to construct a sentence where each word is a valid dictionary word.
-
-         Return all such possible sentences.
-
-            For example, given
-            s = "catsanddog",
-            dict = ["cat", "cats", "and", "sand", "dog"].
-
-            A solution is ["cats and dog", "cat sand dog"].
-         */
-
+        #region word break II
         public List<string> WordBreakII(string s, List<string> dic)
         {
             if (dic == null || dic.Count == 0)
@@ -806,12 +794,12 @@ Design an algorithm to find the maximum profit. You may complete at most two tra
 
             List<string> result = new List<string>();
 
-            WorkBreakIIhelper(s, dic, "", result, 0);
+            WordBreakIIhelper(s, dic, "", result, 0, 0);
 
             return result;
         }
 
-        private void WorkBreakIIhelper(string s, List<string> dic, string solution, List<string> result, int level)
+        private void WordBreakIIhelper(string s, List<string> dic, string solution, List<string> result, int level, int len)
         {
 
             //if (level >= s.Length)
@@ -830,16 +818,102 @@ Design an algorithm to find the maximum profit. You may complete at most two tra
                 str = str + s[i];
                 if (dic.Contains(str))
                 {
+                    len = str.Length;
                     solution = solution.Length == 0 ? (solution + str) : solution + " " + str;
-                    WorkBreakIIhelper(s, dic, solution, result, i + 1);
-                        
+                    WordBreakIIhelper(s, dic, solution, result, i + 1, len);
+                    solution = solution.Remove(solution.Length - len, len);
+                    if (solution.Length > 0)
+                        solution = solution.Remove(solution.Length - 1);
 
                 }
-                
+
+
             }
 
         }
+
+
+
+        public List<string> WordBreakII2(string s, List<string> dict)
+        {
+            List<String> results = new List<String>();
+            string re = null;
+            helper(results, re, s, dict, 0, 0);
+            return results;
+        }
+
+        public void helper(List<string> results, String re, String s, List<String> dict, int start, int step)
+        {
+            if (start == s.Length)
+            {
+                results.Add(re);
+                return;
+            }
+            foreach (string e in dict)
+            {
+                int len = e.Length;
+                int end = start + len;
+                if (end > s.Length) continue;
+                string sub = s.Substring(start, len);
+                if (sub.Equals(e))
+                {
+                    if (step != 0)
+                        re = re + " ";
+                    re = re + sub;
+                    helper(results, re, s, dict, end, step + 1);
+                    re = re.Remove(re.Length - len, len);
+                    if (step != 0)
+                        re = re.Remove(re.Length - 1);
+                }
+            }
+
         #endregion
+
+        }
+
+
+        public List<string> WordBreakDP(string s, List<string> dict)
+        {
+            List<string> results = new List<string>();
+            string re = "";
+            List<List<int>> dp = new List<List<int>>();
+            for (int i = 0; i < s.Length + 1; i++)
+            {
+                dp.Add(new List<int>());
+            }
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (i > 0 && dp[i].Count == 0) continue;
+                foreach (string e in dict)
+                {
+                    int end = i + e.Length;
+                    if (end > s.Length) continue;
+                    String sub = s.Substring(i, e.Length);
+                    if (sub.Equals(e))
+                        dp[end].Add(i);
+                }
+            }
+            helper(results,  re, s, dict, dp, s.Length, 0);
+            return results;
+        }
+        public void helper(List<string> results,  string re, string s, List<string> dict, List<List<int>> dp, int cur, int step)
+        {
+            if (cur == 0)
+            {
+                results.Add(re);
+                return;
+            }
+            foreach (int p in dp[cur])
+            {
+                if (step > 0) re =re.Insert(0, " ");
+                re =re.Insert(0, s.Substring(p, cur-p));
+                helper(results, re, s, dict, dp, p, step + 1);
+                re =re.Remove(0, cur - p);
+                if (step != 0) re.Remove(0);
+
+               
+            }
+        }
 
 
 
