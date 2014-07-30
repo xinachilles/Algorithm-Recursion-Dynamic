@@ -640,7 +640,7 @@ Design an algorithm to find the maximum profit. You may complete at most two tra
                 }
                 if (i < s.Length - 1 && s[i] != '0')
                 {
-                    if (valid(s.Substring(i-1, 2)))
+                    if (valid(s.Substring(i - 1, 2)))
                     {
 
                         result = result + 1;
@@ -665,12 +665,12 @@ Design an algorithm to find the maximum profit. You may complete at most two tra
         public int NumDecodings2(string s)
         {
 
-            if (s== null || s.Length == 0)
+            if (s == null || s.Length == 0)
             {
                 return 0;
             }
 
-            int[] result = new int[s.Length+1];
+            int[] result = new int[s.Length + 1];
 
             if (s[0] != '0')
             {
@@ -695,7 +695,7 @@ Design an algorithm to find the maximum profit. You may complete at most two tra
             //DP
             for (int i = 2; i <= s.Length; i++)
             {
-                if (s[i-1] != '0') { result[i] += result[i - 1]; }
+                if (s[i - 1] != '0') { result[i] += result[i - 1]; }
                 if (i < s.Length)
                 {
 
@@ -711,7 +711,140 @@ Design an algorithm to find the maximum profit. You may complete at most two tra
 
         }
 
-        #endregion 
+        #endregion
+
+        #region Leet Word Break
+        /*        Given a string s and a dictionary of words dict, determine if s can be segmented into a space-separated sequence of one or more dictionary words.
+
+        For example, given
+        s = "leetcode",
+        dict = ["leet", "code"].
+
+        Return true because "leetcode" can be segmented as "leet code".*/
+
+        public bool WordBreak(string s, List<string> dict)
+        {
+            foreach (string item in dict)
+            {
+                if (s.Contains(item))
+                {
+                    s = s.Remove(s.IndexOf(item), item.Length);
+
+                }
+                else
+                {
+
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        /*dymatic*/
+        public bool WordBreakI(string s, List<string> dic)
+        {
+            /**/
+            bool[] result = new bool[s.Length + 1];
+            for (int i = 0; i < result.Length; i++)
+            {
+                result[i] = false;
+            }
+
+            result[0] = true;
+
+            for (int i = 0; i < s.Length; i++)
+            {
+
+
+                for (int j = 0; j <= i - 1; j++)
+                {
+                    if (result[j] == true && DicContains(s.Substring(j + 1, i - j), dic))
+                    {
+                        result[i + 1] = true;
+                        break;
+                    }
+
+                }
+            }
+
+            return result[result.Length - 1];
+        }
+
+        private bool DicContains(string s, List<string> dic)
+        {
+            foreach (string item in dic)
+            {
+                if (item.Contains(s))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        #endregion
+
+        #region Leet Word Break II error one
+        /*
+         Given a string s and a dictionary of words dict, add spaces in s to construct a sentence where each word is a valid dictionary word.
+
+         Return all such possible sentences.
+
+            For example, given
+            s = "catsanddog",
+            dict = ["cat", "cats", "and", "sand", "dog"].
+
+            A solution is ["cats and dog", "cat sand dog"].
+         */
+
+        public List<string> WordBreakII(string s, List<string> dic)
+        {
+            if (dic == null || dic.Count == 0)
+            {
+                return null;
+            }
+
+
+            List<string> result = new List<string>();
+
+            WorkBreakIIhelper(s, dic, "", result, 0);
+
+            return result;
+        }
+
+        private void WorkBreakIIhelper(string s, List<string> dic, string solution, List<string> result, int level)
+        {
+
+            //if (level >= s.Length)
+            //{
+            //    return;
+            //}
+            if (level >= s.Length)
+            {
+                result.Add(solution);
+                return;
+            }
+            string str = "";
+            for (int i = level; i < s.Length; i++)
+            {
+
+                str = str + s[i];
+                if (dic.Contains(str))
+                {
+                    solution = solution.Length == 0 ? (solution + str) : solution + " " + str;
+                    WorkBreakIIhelper(s, dic, solution, result, i + 1);
+                        
+
+                }
+                
+            }
+
+        }
+        #endregion
+
+
+
+
+
     }
 
 }

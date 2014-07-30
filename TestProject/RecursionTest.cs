@@ -640,5 +640,36 @@ namespace TestProject
             actual = target.CountWaysDP3(n);
           
         }
+
+        /// <summary>
+        ///A test for Concatenation
+        ///</summary>
+        [TestMethod()]
+        public void ConcatenationTest()
+        {
+            Recursion target = new Recursion(); // TODO: Initialize to an appropriate value
+            string s ="barfoothefoobarman"; // TODO: Initialize to an appropriate value
+            string[] words =  {"foo", "bar"}; // TODO: Initialize to an appropriate value
+            List<int> expected = null; // TODO: Initialize to an appropriate value
+            List<int> actual;
+            actual = target.Concatenation(s, words);
+            Assert.AreEqual(expected, actual);
+           
+        }
+
+        /// <summary>
+        ///A test for Concatenation2
+        ///</summary>
+        [TestMethod()]
+        public void Concatenation2Test()
+        {
+            Recursion target = new Recursion(); // TODO: Initialize to an appropriate value
+            string s = "barfoothefoobarman"; // TODO: Initialize to an appropriate value
+            string[] words = { "foo", "bar" }; ; // TODO: Initialize to an appropriate value
+            List<int> expected = null; // TODO: Initialize to an appropriate value
+            List<int> actual;
+            actual = target.Concatenation2(s, words);
+        
+        }
     }
 }

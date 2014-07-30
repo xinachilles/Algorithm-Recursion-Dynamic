@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="bd97498c-c954-4e74-845e-d9d5ac18ec0f" name="Huyoucai@HUYOUCAI-PC 2014-07-28 21:54:22" runUser="Huyoucai-PC\Huyoucai" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="e4167082-9d56-471a-b488-96ac36bacfa7">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Huyoucai_HUYOUCAI-PC 2014-07-28 21_54_22">
+      <DeploymentItem filename="G:\GitHub\Algorithm-Recursion-Dynamic\Algorithm-Recursion\bin\Debug\Algorithm-Recursion.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2014-07-28T21:54:22.9332676-06:00" queuing="2014-07-28T21:54:29.9476688-06:00" start="2014-07-28T21:54:30.1236789-06:00" finish="2014-07-28T21:54:32.6258220-06:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="WordBreakIITest" storage="g:\github\algorithm-recursion-dynamic\testproject\bin\debug\testproject.dll" id="d8b5e24e-36fe-67eb-d089-27a43846d83b">
+      <Execution id="3f2d1f5c-aa96-49b0-8a9c-ee9facceac0d" />
+      <TestMethod codeBase="G:/GitHub/Algorithm-Recursion-Dynamic/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.DynamicTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="WordBreakIITest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="d8b5e24e-36fe-67eb-d089-27a43846d83b" executionId="3f2d1f5c-aa96-49b0-8a9c-ee9facceac0d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="3f2d1f5c-aa96-49b0-8a9c-ee9facceac0d" testId="d8b5e24e-36fe-67eb-d089-27a43846d83b" testName="WordBreakIITest" computerName="HUYOUCAI-PC" duration="00:00:00.0386061" startTime="2014-07-28T21:54:30.2976889-06:00" endTime="2014-07-28T21:54:32.2808023-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3f2d1f5c-aa96-49b0-8a9c-ee9facceac0d">
+    </UnitTestResult>
+  </Results>
+</TestRun>

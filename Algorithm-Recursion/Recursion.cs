@@ -1964,10 +1964,98 @@ namespace ClassLibrary
             return s.Substring(minStart, minEnd - minStart + 1);
         }
 
+        /**/
 
-    }
+//        You are given a string, S, and a list of words, L, that are all of the same length. Find all starting indices of substring(s) in S that is a concatenation of each word in L exactly once and without any intervening characters.
 
+//For example, given:
+//S: "barfoothefoobarman"
+//L: ["foo", "bar"]
 
+//You should return the indices: [0,9].
+//(order does not matter).
+
+ public List<int> Concatenation(string s, string[] words)
+{
+	int length = words[0].Length;
+	int totalLength = length * words.Count();
+    int index = 0;
+    List<string> listWords = words.ToList<string>();
+
+    List<int> result = new List<int> ();
+	for(int i =0; i<s.Length; i++)
+	{
+	  
+      int j;
+	  for(j =i; j< s.Length;j =j+length)
+	 {
+         if (s.Substring(j, length) != listWords[index])
+         {
+             result.Clear();
+             index = 0;
+             break;
+
+         }
+         else {
+             result.Add(i);
+             i = j - length - 1;
+             index = index + 1; 
+         }
+         
+
+	 }
+
+		
+	}
+	
+	return result;
 }
+ public List<int> Concatenation2(string s, string[] words) { 
+ 
+ 
+        List<int> list = new  List<int>();  
+        int len = words.Length;  
+        if (len == 0) {  
+            return list;  
+        }  
+        int wordLen = words[0].Length;  
+        Dictionary<string, int> wordsMap = new Dictionary<string, int>();  
+        for (int i = 0; i < len; i++) {  
+            int num = 1;  
+            if (wordsMap.ContainsKey(words[i]) !=false) {  
+                num += wordsMap[words[i]];  
+            }  
+            wordsMap.Add(words[i], num);  
+        }  
+        int slen = s.Length;  
+        int max = slen - len * wordLen + 1;  
+        for (int i = 0; i < max; i++) {  
+             Dictionary<string, int> numMap  = new Dictionary<string, int>();  
+            int j = 0;  
+            for (; j < len; j++) {  
+                int start = i + j * wordLen;  
+                int end = start + wordLen;  
+                String tempStr = s.Substring(start, end-start );  
+                if (!wordsMap.ContainsKey(tempStr)) {  
+                    break;  
+                }  
+                int num = 1;  
+                if (numMap.ContainsKey(tempStr) != false) {  
+                    num += numMap[tempStr];  
+                }  
+                if (num > wordsMap[tempStr]) {  
+                    break;  
+                }  
+                numMap.Add(tempStr, num);  
+            }  
+            if (j == len) {  
+                list.Add(i);  
+            }  
+        }  
+        return list;  
+    }  
+}   
+ }
+   
 
 

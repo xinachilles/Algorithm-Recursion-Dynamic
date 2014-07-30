@@ -208,5 +208,53 @@ namespace TestProject
             actual = target.NumDecodings(s);
             actual1 = target.NumDecodings2(s);
                    }
+
+        /// <summary>
+        ///A test for WordBreak
+        ///</summary>
+        [TestMethod()]
+        public void WordBreakTest()
+        {
+            Dynamic target = new Dynamic(); // TODO: Initialize to an appropriate value
+            string[] a =  {"leet", "code"};
+            string s = "leetcode"; // TODO: Initialize to an appropriate value
+            List<string> dict = new List<string>(a); // TODO: Initialize to an appropriate value
+            bool expected = false; // TODO: Initialize to an appropriate value
+            bool actual;
+            actual = target.WordBreak(s, dict);
+           
+        }
+
+        /// <summary>
+        ///A test for WordBreakII
+        ///</summary>
+        [TestMethod()]
+        public void WordBreakITest()
+        {
+            Dynamic target = new Dynamic(); // TODO: Initialize to an appropriate value
+            string[] a = { "leet", "code" };
+            string s = "leetcode"; // TODO: Initialize to an appropriate value
+            List<string> dic = new List<string>(a);  // TODO: Initialize to an appropriate value
+            bool expected = false; // TODO: Initialize to an appropriate value
+            bool actual;
+            actual = target.WordBreakI(s, dic);
+            
+        }
+
+        /// <summary>
+        ///A test for WorkBreakII
+        ///</summary>
+        [TestMethod()]
+        public void WordBreakIITest()
+        {
+            Dynamic target = new Dynamic(); // TODO: Initialize to an appropriate value
+            string[] a = {"cat", "cats", "and", "sand", "dog" };
+            string s = "catsanddog"; // TODO: Initialize to an appropriate value
+            List<string> dic = new List<string>(a);  // TODO: Initialize to an appropriate value
+            List<string> expected = null; // TODO: Initialize to an appropriate value
+            List<string> actual;
+            actual = target.WordBreakII(s, dic);
+            
+        }
     }
 }
