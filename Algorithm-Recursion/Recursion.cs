@@ -132,14 +132,14 @@ namespace ClassLibrary
         public int CountWaysDP3(int n)
         {
 
-            int[] map = new int[3+1];
+            int[] map = new int[3 + 1];
             map[0] = 1;
             map[1] = 1;
             map[2] = 2;
 
             for (int i = 3; i <= n; i++)
             {
-                map[i % 4] = map[(i - 1) % 4] + map[(i - 2) % 4] + map[(i-3)%4];
+                map[i % 4] = map[(i - 1) % 4] + map[(i - 2) % 4] + map[(i - 3) % 4];
             }
             return map[n % 4];
         }
@@ -1601,8 +1601,7 @@ namespace ClassLibrary
             int max_col = board[0].Length; ;
 
 
-            if (row >= max_row || row < 0  || col < 0 || col >= max_col)
-                
+            if (row >= max_row || row < 0 || col < 0 || col >= max_col)
             {
                 return false;
             }
@@ -1635,7 +1634,7 @@ namespace ClassLibrary
         }
         #endregion
 
-        #region LeetCode Combinations, Solution
+        #region Leet Combinations, Solution
         /*
          Given two integers n and k, return all possible combinations of k numbers out of 1 ... n.
          For example,
@@ -1662,7 +1661,7 @@ namespace ClassLibrary
         {
             if (solution.Count == k)
             {
-                
+
                 result.Add(new List<int>(solution));
                 return;
             }
@@ -1711,7 +1710,7 @@ namespace ClassLibrary
 
         #endregion
 
-        #region Minimum Window Substring
+        #region Leet Minimum Window Substring
 
         /* Given a string S and a string T, find the minimum window in S which will contain all the characters in T in complexity O(n).
 
@@ -1724,7 +1723,7 @@ namespace ClassLibrary
         If there is no such window in S that covers all characters in T, return the emtpy string "".
 
         If there are multiple such windows, you are guaranteed that there will always be only one unique minimum window in S.*/
-        #endregion
+
 
         /*
          thought: Min(i) is the array, it is minimum window in S contain the i th characters in T 
@@ -1965,97 +1964,113 @@ namespace ClassLibrary
         }
 
         /**/
+        #endregion
 
-//        You are given a string, S, and a list of words, L, that are all of the same length. Find all starting indices of substring(s) in S that is a concatenation of each word in L exactly once and without any intervening characters.
+        #region Leet Substring with Concatenation of All Words
+        //        You are given a string, S, and a list of words, L, that are all of the same length. Find all starting indices of substring(s) in S that is a concatenation of each word in L exactly once and without any intervening characters.
 
-//For example, given:
-//S: "barfoothefoobarman"
-//L: ["foo", "bar"]
+        //For example, given:
+        //S: "barfoothefoobarman"
+        //L: ["foo", "bar"]
 
-//You should return the indices: [0,9].
-//(order does not matter).
+        //You should return the indices: [0,9].
+        //(order does not matter).
 
- public List<int> Concatenation(string s, string[] words)
-{
-	int length = words[0].Length;
-	int totalLength = length * words.Count();
-    int index = 0;
-    List<string> listWords = words.ToList<string>();
+        public List<int> Concatenation(string s, string[] words)
+        {
+            int length = words[0].Length;
+            int totalLength = length * words.Count();
+            int index = 0;
+            List<string> listWords = words.ToList<string>();
 
-    List<int> result = new List<int> ();
-	for(int i =0; i<s.Length; i++)
-	{
-	  
-      int j;
-	  for(j =i; j< s.Length;j =j+length)
-	 {
-         if (s.Substring(j, length) != listWords[index])
-         {
-             result.Clear();
-             index = 0;
-             break;
+            List<int> result = new List<int>();
+            for (int i = 0; i < s.Length; i++)
+            {
 
-         }
-         else {
-             result.Add(i);
-             i = j - length - 1;
-             index = index + 1; 
-         }
-         
+                int j;
+                for (j = i; j < s.Length; j = j + length)
+                {
+                    if (s.Substring(j, length) != listWords[index])
+                    {
+                        result.Clear();
+                        index = 0;
+                        break;
 
-	 }
+                    }
+                    else
+                    {
+                        result.Add(i);
+                        i = j - length - 1;
+                        index = index + 1;
+                    }
 
-		
-	}
-	
-	return result;
+
+                }
+
+
+            }
+
+            return result;
+        }
+        public List<int> Concatenation2(string s, string[] words)
+        {
+
+
+            List<int> list = new List<int>();
+            int len = words.Length;
+            if (len == 0)
+            {
+                return list;
+            }
+            int wordLen = words[0].Length;
+            Dictionary<string, int> wordsMap = new Dictionary<string, int>();
+            for (int i = 0; i < len; i++)
+            {
+                int num = 1;
+                if (wordsMap.ContainsKey(words[i]) != false)
+                {
+                    num += wordsMap[words[i]];
+                }
+                wordsMap.Add(words[i], num);
+            }
+            int slen = s.Length;
+            int max = slen - len * wordLen + 1;
+            for (int i = 0; i < max; i++)
+            {
+                Dictionary<string, int> numMap = new Dictionary<string, int>();
+                int j = 0;
+                for (; j < len; j++)
+                {
+                    int start = i + j * wordLen;
+                    int end = start + wordLen;
+                    String tempStr = s.Substring(start, end - start);
+                    if (!wordsMap.ContainsKey(tempStr))
+                    {
+                        break;
+                    }
+                    int num = 1;
+                    if (numMap.ContainsKey(tempStr) != false)
+                    {
+                        num += numMap[tempStr];
+                    }
+                    if (num > wordsMap[tempStr])
+                    {
+                        break;
+                    }
+                    numMap.Add(tempStr, num);
+                }
+                if (j == len)
+                {
+                    list.Add(i);
+                }
+            }
+            return list;
+        }
+
+        #endregion
+    }
+
 }
- public List<int> Concatenation2(string s, string[] words) { 
- 
- 
-        List<int> list = new  List<int>();  
-        int len = words.Length;  
-        if (len == 0) {  
-            return list;  
-        }  
-        int wordLen = words[0].Length;  
-        Dictionary<string, int> wordsMap = new Dictionary<string, int>();  
-        for (int i = 0; i < len; i++) {  
-            int num = 1;  
-            if (wordsMap.ContainsKey(words[i]) !=false) {  
-                num += wordsMap[words[i]];  
-            }  
-            wordsMap.Add(words[i], num);  
-        }  
-        int slen = s.Length;  
-        int max = slen - len * wordLen + 1;  
-        for (int i = 0; i < max; i++) {  
-             Dictionary<string, int> numMap  = new Dictionary<string, int>();  
-            int j = 0;  
-            for (; j < len; j++) {  
-                int start = i + j * wordLen;  
-                int end = start + wordLen;  
-                String tempStr = s.Substring(start, end-start );  
-                if (!wordsMap.ContainsKey(tempStr)) {  
-                    break;  
-                }  
-                int num = 1;  
-                if (numMap.ContainsKey(tempStr) != false) {  
-                    num += numMap[tempStr];  
-                }  
-                if (num > wordsMap[tempStr]) {  
-                    break;  
-                }  
-                numMap.Add(tempStr, num);  
-            }  
-            if (j == len) {  
-                list.Add(i);  
-            }  
-        }  
-        return list;  
-    }  
-}   
- }
-   
+
 
 

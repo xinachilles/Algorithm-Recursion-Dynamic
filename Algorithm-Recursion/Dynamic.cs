@@ -343,8 +343,27 @@ namespace Algorithm_Dynamic
 
             return total[0];
         }
+        /*from note 8/15 not correct */
+        public int MinimumTotalDymatic2(List<List<int>> triangle) { 
+            if (triangle == null)
+	{
+		 return 0;
+	}
+            int count = triangle.Count;
 
+            int [] result = new int[triangle[count-1].Count];
+            for (int i = count-1; i >=0; i--)
+			{
+			 for (int j = 0; j < triangle[i].Count-1; j++)
+			{
+			 result[j] = result[j] + Math.Min(triangle[i][j],triangle[i][j+1]);
+			}
+               
+			}
 
+            
+           return result[0];
+        }
 
         #endregion
 

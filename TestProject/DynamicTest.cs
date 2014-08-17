@@ -144,6 +144,7 @@ namespace TestProject
             triangle.Add(new List<int> { 6, 5, 7 });
             triangle.Add(new List<int> { 4, 1, 8, 3 });
             int actual = target.MinimumTotalDymatic(triangle);
+            int actual1 = target.MinimumTotalDymatic2(triangle);
             Assert.AreEqual(expected, actual);
             Assert.Inconclusive("Verify the correctness of this test method.");
         }

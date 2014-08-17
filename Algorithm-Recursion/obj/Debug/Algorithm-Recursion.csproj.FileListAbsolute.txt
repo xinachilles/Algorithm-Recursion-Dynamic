@@ -22,3 +22,4 @@ G:\GitHub\Algorithm-Recursion-Dynamic\Algorithm-Recursion\bin\Debug\Algorithm-Re
 G:\GitHub\Algorithm-Recursion-Dynamic\Algorithm-Recursion\bin\Debug\Algorithm-Recursion.pdb
 G:\GitHub\Algorithm-Recursion-Dynamic\Algorithm-Recursion\obj\Debug\Algorithm-Recursion.dll
 G:\GitHub\Algorithm-Recursion-Dynamic\Algorithm-Recursion\obj\Debug\Algorithm-Recursion.pdb
+G:\GitHub\Algorithm-Recursion-Dynamic\Algorithm-Recursion\obj\Debug\Algorithm-Recursion.csprojResolveAssemblyReference.cache

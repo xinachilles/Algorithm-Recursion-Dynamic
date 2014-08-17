@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="28ffa376-3fea-4947-9344-ba1dc96e4eb7" name="Huyoucai@HUYOUCAI-PC 2014-08-17 13:27:14" runUser="Huyoucai-PC\Huyoucai" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="e4167082-9d56-471a-b488-96ac36bacfa7">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Huyoucai_HUYOUCAI-PC 2014-08-17 13_27_14">
+      <DeploymentItem filename="G:\GitHub\Algorithm-Recursion-Dynamic\Algorithm-Recursion\bin\Debug\Algorithm-Recursion.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2014-08-17T13:27:14.8507487-06:00" queuing="2014-08-17T13:27:16.0658182-06:00" start="2014-08-17T13:27:16.1568234-06:00" finish="2014-08-17T13:28:01.4164121-06:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="HUYOUCAI-PC" outcome="Error" timestamp="2014-08-17T13:28:01.3424079-06:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="MinimumTotalDymaticTest" storage="g:\github\algorithm-recursion-dynamic\testproject\bin\debug\testproject.dll" id="4e296581-55b7-0748-7cc1-c41a4eca09c1">
+      <Execution id="33ead099-a894-4588-b2a7-48f871391a22" />
+      <TestMethod codeBase="G:/GitHub/Algorithm-Recursion-Dynamic/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.DynamicTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MinimumTotalDymaticTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="4e296581-55b7-0748-7cc1-c41a4eca09c1" executionId="33ead099-a894-4588-b2a7-48f871391a22" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="33ead099-a894-4588-b2a7-48f871391a22" testId="4e296581-55b7-0748-7cc1-c41a4eca09c1" testName="MinimumTotalDymaticTest" computerName="HUYOUCAI-PC" duration="00:00:45.1715836" startTime="2014-08-17T13:27:16.2448285-06:00" endTime="2014-08-17T13:28:01.4164121-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="33ead099-a894-4588-b2a7-48f871391a22">
+    </UnitTestResult>
+  </Results>
+</TestRun>
