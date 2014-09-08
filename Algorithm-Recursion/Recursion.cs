@@ -2068,6 +2068,194 @@ namespace ClassLibrary
         }
 
         #endregion
+
+      
+        #region Pascal's Triangle I
+
+        /*
+            Given numRows, generate the first numRows of Pascal's triangle.
+            For example, given numRows = 5,
+            Return
+            [
+                 [1],
+                [1,1],
+               [1,2,1],
+              [1,3,3,1],
+             [1,4,6,4,1]
+            ]
+         */
+
+        public List<List<int>> Generate(int numRows)
+        {
+            List<List<int>> result = new List<List<int>>();
+            List<int> temp = new List<int>();
+            if (numRows == 0)
+            {
+                return result;
+            }
+
+            temp.Add(1);
+            result.Add(new List<int>(temp));
+
+            if (numRows == 1)
+            {
+                return result;
+            }
+
+
+            temp.Add(1);
+            result.Add(new List<int>(temp));
+
+            if (numRows == 2)
+            {
+                return result;
+            }
+
+            for (int i = 2; i < numRows; i++)
+            {
+                temp = new List<int>();
+                for (int j = 0; j < result[i - 1].Count + 1; j++)
+                {
+
+                    if (j == 0 || j == result[i - 1].Count)
+                    {
+                        temp.Add(1);
+                    }
+                    else
+                    {
+
+                        temp.Add(result[i - 1][j - 1] + result[i - 1][j]);
+
+                    }
+
+
+                }
+
+                result.Add(new List<int>(temp));
+            }
+
+            return result;
+        }
+
+        /*
+         Recursive way
+        */
+
+        public List<List<int>> Generate2(int numberRows)
+        {
+            List<List<int>> result = new List<List<int>>();
+            if (numberRows > 0)
+            {
+                List<int> temp = new List<int>();
+                temp.Add(1);
+                result.Add(temp);
+
+                GenerateHelper(numberRows - 1, result);
+            }
+            return result;
+        }
+
+        private void GenerateHelper(int index, List<List<int>> result)
+        {
+            List<int> temp = new List<int>();
+
+            if (index <= 0)
+            {
+                return;
+            }
+
+
+
+            if (index == 1)
+            {
+
+                temp.Add(1);
+                temp.Add(1);
+                result.Add(temp);
+                return;
+            }
+
+            GenerateHelper(index - 1, result);
+
+            for (int i = 0; i < result[result.Count - 1].Count + 1; i++)
+            {
+                if (i == 0 || i == result[result.Count - 1].Count)
+                {
+
+                    temp.Add(1);
+
+                }
+                else
+                {
+
+                    temp.Add(result[result.Count - 1][i - 1] + result[result.Count - 1][i]);
+                }
+            }
+
+
+            result.Add(temp);
+
+
+        }
+
+        #endregion
+
+        #region Restore IP Addresses
+        /*
+         Given a string containing only digits, restore it by returning all possible valid IP address combinations.
+        For example:
+        Given "25525511135",
+        return ["255.255.11.135", "255.255.111.35"]. (Order does not matter)
+         */
+
+        public List<string> RestoreIpAddresses(string s)
+        {
+            List<string> res = new List<string>();
+            if (s == null || s.Length == 0)
+                return res;
+            helper(s, 0, 1, "", res);
+            return res;
+        }
+        private void helper(String s, int index, int segment, String item, List<String> res)
+        {
+            if (index >= s.Length)
+                return;
+            if (segment == 4)
+            {
+                String str = s.Substring(index);
+                if (isValid(str))
+                {
+                    res.Add(item + "." + str);
+                }
+                return;
+            }
+            for (int i = 1; i < 4 && (i + index <= s.Length); i++)
+            {
+                String str = s.Substring(index, i);
+                if (isValid(str))
+                {
+                    if (segment == 1)
+                        helper(s, index + i, segment + 1, str, res);
+                    else
+                        helper(s, index + i, segment + 1, item + "." + str, res);
+                }
+            }
+        }
+        private bool isValid(String str)
+        {
+            if (str == null || str.Length<=0|| str.Length > 3)
+                return false;
+            int num = int.Parse(str);
+            if (str[0] == '0' && str.Length > 1)
+                return false;
+            if (num >= 0 && num <= 255)
+                return true;
+            return false;
+        }
+
+        #endregion
+
+
     }
 
 }

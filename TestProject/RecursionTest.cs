@@ -671,5 +671,19 @@ namespace TestProject
             actual = target.Concatenation2(s, words);
         
         }
+
+        /// <summary>
+        ///A test for RestoreIpAddresses
+        ///</summary>
+        [TestMethod()]
+        public void RestoreIpAddressesTest()
+        {
+            Recursion target = new Recursion(); // TODO: Initialize to an appropriate value
+            string s = "25525511135";
+            List<string> expected = null; // TODO: Initialize to an appropriate value
+            List<string> actual;
+            actual = target.RestoreIpAddresses(s);
+         
+        }
     }
 }

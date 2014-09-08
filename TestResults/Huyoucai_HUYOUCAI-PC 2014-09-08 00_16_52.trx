@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="57954606-29c4-44ea-9ed3-c81daeaf7c5f" name="Huyoucai@HUYOUCAI-PC 2014-09-08 00:16:52" runUser="Huyoucai-PC\Huyoucai" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="e4167082-9d56-471a-b488-96ac36bacfa7">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Huyoucai_HUYOUCAI-PC 2014-09-08 00_16_52">
+      <DeploymentItem filename="G:\GitHub\Algorithm-Recursion-Dynamic\Algorithm-Recursion\bin\Debug\Algorithm-Recursion.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2014-09-08T00:16:52.4230792-06:00" queuing="2014-09-08T00:16:53.6781510-06:00" start="2014-09-08T00:16:53.7891574-06:00" finish="2014-09-08T00:20:16.6787620-06:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="HUYOUCAI-PC" outcome="Error" timestamp="2014-09-08T00:20:16.6707615-06:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="RestoreIpAddressesTest" storage="g:\github\algorithm-recursion-dynamic\testproject\bin\debug\testproject.dll" id="c0bcccea-e9e5-2ba5-358f-e1e81c5a5ab4">
+      <Execution id="4052591c-ace0-4288-9e07-d310243ce63f" />
+      <TestMethod codeBase="G:/GitHub/Algorithm-Recursion-Dynamic/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.RecursionTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="RestoreIpAddressesTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="c0bcccea-e9e5-2ba5-358f-e1e81c5a5ab4" executionId="4052591c-ace0-4288-9e07-d310243ce63f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="4052591c-ace0-4288-9e07-d310243ce63f" testId="c0bcccea-e9e5-2ba5-358f-e1e81c5a5ab4" testName="RestoreIpAddressesTest" computerName="HUYOUCAI-PC" duration="00:03:22.7835986" startTime="2014-09-08T00:16:53.8951634-06:00" endTime="2014-09-08T00:20:16.6787620-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4052591c-ace0-4288-9e07-d310243ce63f">
+    </UnitTestResult>
+  </Results>
+</TestRun>
